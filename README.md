@@ -16,3 +16,16 @@ When a user selects a relation to post A for post C than post post A gets a meta
 
 When this happens post B also gets a new meta value: `null`
 This way post B is no longer stranded and has a no relation. So in short the trail gets cleaned up for you.
+
+## Adding this field
+The next step is registering the field with ACF. This code may varry on your project structure.
+
+  <?php
+    // in functions.php file
+    if( function_exists( 'register_field' ) )
+    {
+      register_field('Post_to_post', dirname(__File__) . '/fields/post_to_post.php');
+    }
+  ?>
+
+http://www.advancedcustomfields.com/docs/tutorials/creating-and-registering-your-own-field/
